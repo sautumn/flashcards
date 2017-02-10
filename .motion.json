@@ -1,0 +1,12 @@
+{
+  "babel": {
+    "presets": [
+      "babel-preset-motion"
+    ]
+  },
+  "pathType": "filePath",
+  "webServerPort": 11910,
+  "saveNpmModules": true,
+  "bundleDirectory": ".",
+  "publicDirectory": "./public"
+}
