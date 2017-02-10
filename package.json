@@ -4,5 +4,11 @@
   "license": "",
   "author": "",
   "private": true,
-  "dependencies": {}
+  "scripts": {
+    "heroku-postbuild": "motion"
+  }
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
 }
