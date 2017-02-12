@@ -5,7 +5,9 @@
   "author": "",
   "private": true,
   "scripts": {
-    "start": "motion"
+    "start": "motion",
+    "watch": "webpack -d --watch",
+    "build": "webpack -p"
   },
   "dependencies": {
     "babel-loader": "^6.2.10",
