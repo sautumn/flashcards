@@ -4,7 +4,7 @@ const pg = require('pg');
 
 // ElephantSQL url
 const dbUrl = 'postgres://fcwpulfc:k-bPlC8Bf-X3n7V8ZT4ftcqDuJ2t80Nb@babar.elephantsql.com:5432/fcwpulfc';
-// ENV var for Heroku deployment later
+// ENV var for deployment later
 const connString = process.env.ELEPHANTSQL_URL || dbUrl;
 
 const client = new pg.Client(connString);
