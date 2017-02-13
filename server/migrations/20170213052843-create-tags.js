@@ -1,6 +1,9 @@
-'use strict';
+// created model via command line using sequelize
+// i.e. : sequelize model:create --name schema_name --attributes title:string
+// refactored to es6 syntax
+
 module.exports = {
-  up: function(queryInterface, Sequelize) {
+  up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Tags', {
       id: {
         allowNull: false,
@@ -8,7 +11,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      tag: {
+      tag_name: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -21,7 +24,7 @@ module.exports = {
       }
     });
   },
-  down: function(queryInterface, Sequelize) {
+  down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Tags');
   }
 };

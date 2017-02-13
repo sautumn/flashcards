@@ -1,8 +1,8 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Tagmap = sequelize.define('Tagmap', {
-    question_id: DataTypes.INT,
-    tag_id: DataTypes.ID
+    question_id: DataTypes.INTEGER,
+    tag_id: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {

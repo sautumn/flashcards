@@ -9,10 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       question_id: {
-        type: Sequelize.INT
+        type: Sequelize.INTEGER
       },
       tag_id: {
-        type: Sequelize.ID
+        type: Sequelize.INTEGER
       }
     });
   },
@@ -20,5 +20,3 @@ module.exports = {
     return queryInterface.dropTable('Tagmaps');
   }
 };
-
-//TODO: add foreign keys as question_id and tag_id 
