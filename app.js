@@ -2,9 +2,10 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
-
-// client app dir for cleaner code
 const APP_DIR = path.resolve(__dirname, 'src/client');
+
+// Establish connection to database
+require('./server/dbConnect');
 
 const app = express();
 
@@ -22,5 +23,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(8081, () => {
-   console.log('Example app listening at 8081');
+   console.log('Local server listening at 8081! 😎');
 });
