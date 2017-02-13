@@ -2,7 +2,7 @@
 // i.e. : sequelize model:create --name schema_name --attributes title:string
 // refactored to es6 syntax
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
   const Questions = sequelize.define('Questions', {
     question: DataTypes.STRING,
     answer: DataTypes.STRING,

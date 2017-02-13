@@ -1,6 +1,5 @@
 // sequelize init generated file
 // refactored to es6
-'use strict';
 
 const fs        = require('fs');
 const path      = require('path');
