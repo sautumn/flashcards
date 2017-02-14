@@ -28,9 +28,8 @@ class App extends React.Component {
       <MuiThemeProvider muiTheme={getMuiTheme(myTheme)}>
         <div>
             <div style={title}>Front End Flashcards</div>
-
             <FlashCard/>
-            <About/>
+            {/* <About/> */}
         </div>
       </MuiThemeProvider>
     );

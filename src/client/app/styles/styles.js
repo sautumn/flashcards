@@ -25,9 +25,14 @@ styles.title = title;
 export const cardContainer = {
   margin: '0 auto',
   maxWidth: '300px',
-  height: '80%',
-  // width: '100%',
+  minHeight: '80%',
 };
 styles.cardContainer = cardContainer;
+
+export const cardActions = {
+  width: '100%',
+  textAlign: 'center',
+};
+styles.cardActions = cardActions;
 
 export default styles;

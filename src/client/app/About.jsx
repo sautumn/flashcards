@@ -7,7 +7,6 @@ import React from 'react';
 const About = () => (
   <div>
       Made with <i className='fa fa-heart'/> by @sautumn
-      <code> Test </code>
       <br/>
       <a href='https://github.com/sautumn/flashcards' target='blank'><i className='fa fa-github'/></a>
   </div>
