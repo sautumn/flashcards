@@ -1,7 +1,9 @@
 import React        from 'react';
-// Styles
+// Material-UI Styles
 import RaisedButton from 'material-ui/RaisedButton';
 import { Card, CardHeader, CardText, CardActions } from 'material-ui/Card';
+// Inline CSS Styles
+import { main, cardContainer } from './styles/styles';
 
 class FlashCard extends React.Component {
   constructor(props) {
@@ -10,16 +12,20 @@ class FlashCard extends React.Component {
     this.addPoint = this.addPoint.bind(this);
   }
 
+  coponentDidMount () {
+    console.log('hey')
+    document.body.style.backgroundColor = "green";
+  }
+
   addPoint () {
     let newScore = this.state.score + 1;
     this.setState({score: newScore});
   }
 
-
   render() {
     return (
       <div>
-        <Card>
+        <Card style={cardContainer}>
           <CardHeader title={'Some title here'}/>
             <CardText>Score:{this.state.score}</CardText>
             <CardActions>
