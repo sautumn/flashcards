@@ -24,10 +24,16 @@ styles.title = title;
 
 export const cardContainer = {
   margin: '0 auto',
-  maxWidth: '300px',
+  maxWidth: '600px',
   minHeight: '80%',
 };
 styles.cardContainer = cardContainer;
+
+export const score = {
+  textAlign: 'right',
+  textTransform: 'uppercase',
+}
+styles.score = score;
 
 export const cardActions = {
   width: '100%',
