@@ -35,6 +35,11 @@ export const score = {
 }
 styles.score = score;
 
+export const cardAnswer = {
+  textAlign: 'center',
+}
+styles.cardAnswer = cardAnswer;
+
 export const cardActions = {
   width: '100%',
   textAlign: 'center',

@@ -5,18 +5,14 @@ import {render} from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme      from 'material-ui/styles/getMuiTheme';
 // Inline CSS Styles
-import { title, myTheme }         from './styles/styles';
+import { title, myTheme }   from './styles/styles';
 // Prevent error dialogs for onClick
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 // Components
 import FlashCard        from './FlashCard.jsx';
-import About from './About.jsx';
-
-// darkBaseTheme.palette.canvasColor = '#000000';
-console.log(title);
-
+import About            from './About.jsx';
 
 class App extends React.Component {
   componentDidMount () {
