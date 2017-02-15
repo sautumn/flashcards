@@ -8,7 +8,7 @@ import { main, cardContainer, cardAnswer, cardActions } from './styles/styles';
 
 // Components
 import Score from './Score.jsx';
-import AnswerSide from './AnswerSide.jsx';
+import ShowAnswer from './ShowAnswer.jsx';
 import QuestionSide from './QuestionSide.jsx';
 
 class FlashCard extends React.Component {
@@ -39,7 +39,8 @@ class FlashCard extends React.Component {
           <Score score={this.state.score}/>
           <CardTitle title={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?'}/>
           { this.state.flipCard ?
-            <QuestionSide/> : <AnswerSide/>
+            // add answer prop to pass down to answer side
+            <QuestionSide /> : <ShowAnswer handleClick={this.addPoint.bind(this)} rightAnswer={this.addPoint}/>
           }
         <RaisedButton onClick={this.flipCard} label='Flip card'/>
         </Card>

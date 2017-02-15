@@ -13,7 +13,7 @@ class AnswerSide extends React.Component {
           {
             // Update true/false here with props from parent as fn
           }
-          <RaisedButton label='Show Answer' onClick={console.log('Show answer')}/>
+          <RaisedButton label='Show Answer' onClick={this.props.handleClick.bind(this)}/>
         </CardActions>
       </div>
     );
