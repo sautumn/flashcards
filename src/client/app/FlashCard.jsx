@@ -8,6 +8,8 @@ import { main, cardContainer, cardAnswer, cardActions } from './styles/styles';
 
 // Components
 import Score from './Score.jsx';
+import AnswerSide from './AnswerSide.jsx';
+import QuestionSide from './QuestionSide.jsx';
 
 class FlashCard extends React.Component {
   constructor(props) {
@@ -37,21 +39,24 @@ class FlashCard extends React.Component {
           <Score score={this.state.score}/>
           <CardTitle title={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?'}/>
           { this.state.flipCard ?
-            <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</CardText>
-            : <RaisedButton style={cardAnswer} onClick={this.flipCard} label='Flip card'/>
+            <QuestionSide/> : <AnswerSide/>
           }
-            <CardActions style={cardActions}>
-              {
-                // TODO: add click to save card for later
-              }
-              <RaisedButton label='Review later'/>
-              <RaisedButton onClick={this.addPoint} label='Got it!'/>
-            </CardActions>
+        <RaisedButton onClick={this.flipCard} label='Flip card'/>
         </Card>
         <Score score={this.state.score}/>
       </div>
     )
   }
 }
+
+// { this.state.flipCard ?
+//   <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</CardText>
+//   : <RaisedButton style={cardAnswer} onClick={this.flipCard} label='Flip card'/>
+// }
+
+// {/* <CardActions style={cardActions}>
+//   <RaisedButton label='Review later'/>
+//   <RaisedButton onClick={this.addPoint} label='Got it!'/>
+// </CardActions> */}
 
 export default FlashCard;

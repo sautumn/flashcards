@@ -26,6 +26,9 @@ export const cardContainer = {
   margin: '0 auto',
   maxWidth: '600px',
   minHeight: '80%',
+  position: 'absolute',
+  left: '5%',
+  right: '5%',
 };
 styles.cardContainer = cardContainer;
 
@@ -35,14 +38,16 @@ export const score = {
 }
 styles.score = score;
 
-export const cardAnswer = {
-  textAlign: 'center',
-}
-styles.cardAnswer = cardAnswer;
+// export const cardAnswer = {
+//   textAlign: 'center',
+// }
+// styles.cardAnswer = cardAnswer;
 
 export const cardActions = {
   width: '100%',
   textAlign: 'center',
+  position: 'absolute',
+  bottom: 0,
 };
 styles.cardActions = cardActions;
 
