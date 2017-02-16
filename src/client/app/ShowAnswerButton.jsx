@@ -5,7 +5,7 @@ import { CardActions } from 'material-ui/Card';
 // Inline styles
 import { cardActions } from './styles/styles';
 
-class AnswerSide extends React.Component {
+class ShowAnswerButton extends React.Component {
   render() {
     return (
       <div>
@@ -13,11 +13,13 @@ class AnswerSide extends React.Component {
           {
             // Update true/false here with props from parent as fn
           }
-          <RaisedButton label='Show Answer' onClick={this.props.handleClick.bind(this)}/>
+          <RaisedButton
+            label='Show Answer'
+            onClick={this.props.flip.bind(this)}/>
         </CardActions>
       </div>
     );
   }
 }
 
-export default AnswerSide;
+export default ShowAnswerButton;

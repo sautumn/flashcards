@@ -7,7 +7,7 @@ import { cardActions } from './styles/styles';
 
 const sampleAnswer = 'Answer Text: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.';
 
-class QuestionSide extends React.Component {
+class AnswerSide extends React.Component {
   render() {
     return (
       <div>
@@ -15,15 +15,19 @@ class QuestionSide extends React.Component {
           {sampleAnswer}
         </CardText>
         <CardActions style={cardActions}>
-          <RaisedButton label='Review later' onClick={console.log('Review later')}/>
-          {
-            //Card point should be updated here with props from parent as fn
-          }
-          <RaisedButton label='Got it!' onClick={console.log('Got it!')}/>
+          <RaisedButton
+            label='Review later'
+            onClick={console.log('Review later')}/>
+            {
+              //TODO: add functionality to save card for later
+            }
+          <RaisedButton
+            label='Got it!'
+            onClick={this.props.correct.bind(this)}/>
         </CardActions>
       </div>
     );
   }
 }
 
-export default QuestionSide;
+export default AnswerSide;
