@@ -9,14 +9,9 @@ import { title, myTheme }   from './styles/styles';
 // Prevent error dialogs for onClick
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
-
 // Components
 import FlashCard        from './FlashCard.jsx';
-// Data
-import data from '../../../data.js';
 // import About            from './About.jsx';
-
-console.log(data)
 
 class App extends React.Component {
   componentDidMount () {

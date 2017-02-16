@@ -12,7 +12,7 @@ class AnswerSide extends React.Component {
     return (
       <div>
         <CardText>
-          {sampleAnswer}
+          {this.props.question}
         </CardText>
         <CardActions style={cardActions}>
           <RaisedButton
