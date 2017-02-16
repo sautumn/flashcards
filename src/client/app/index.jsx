@@ -12,7 +12,11 @@ injectTapEventPlugin();
 
 // Components
 import FlashCard        from './FlashCard.jsx';
-import About            from './About.jsx';
+// Data
+import data from '../../../data.js';
+// import About            from './About.jsx';
+
+console.log(data)
 
 class App extends React.Component {
   componentDidMount () {
@@ -25,7 +29,6 @@ class App extends React.Component {
         <div>
             <div style={title}>Front End Flashcards</div>
             <FlashCard/>
-            {/* <About/> */}
         </div>
       </MuiThemeProvider>
     );
