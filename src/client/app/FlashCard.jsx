@@ -46,12 +46,18 @@ class FlashCard extends React.Component {
   }
 
   nextCard() {
+    console.log('Review cards',this.state.reviewCards);
+    console.log('CurrentCards',this.state.allCards);
+
     let nextCardNumber = this.state.cardNumber + 1;
     // End of the current deck
     if (this.state.allCards[nextCardNumber] === undefined) {
       if (this.state.reviewCards.length !== 0) {
         // Set the all cards deck to the review cards
-        this.setState({allCards: this.state.reviewCards});
+        this.setState({
+          allCards: this.state.reviewCards,
+          reviewCards: [],
+        });
       } else {
         // Open dialog when all questions are correctly answered
         this.setState({open: true});
