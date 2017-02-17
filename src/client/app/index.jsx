@@ -13,6 +13,9 @@ injectTapEventPlugin();
 import FlashCard        from './FlashCard.jsx';
 // import About            from './About.jsx';
 
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
+
 class App extends React.Component {
   componentDidMount () {
     document.body.style.backgroundColor = '#f1c40f';
