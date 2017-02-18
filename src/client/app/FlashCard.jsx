@@ -46,9 +46,6 @@ class FlashCard extends React.Component {
   }
 
   nextCard() {
-    console.log('Review cards',this.state.reviewCards);
-    console.log('CurrentCards',this.state.allCards);
-
     let nextCardNumber = this.state.cardNumber + 1;
     // End of the current deck
     if (this.state.allCards[nextCardNumber] === undefined) {
@@ -89,7 +86,6 @@ class FlashCard extends React.Component {
   };
 
   handleClose() {
-    this.setState({open: false});
     // Closing dialog resets the cards back to initial state
     this.initialState();
   };
@@ -100,7 +96,7 @@ class FlashCard extends React.Component {
         label="Restart Cards"
         primary={true}
         keyboardFocused={true}
-        onClick={this.handleClose}
+        onTouchTap={this.handleClose}
       />
     ];
     return (
@@ -110,14 +106,12 @@ class FlashCard extends React.Component {
           actions={actions}
           modal={false}
           open={this.state.open}
-          onRequestClose={this.handleClose}
+          onRequestClose={this.initialState}
         >
-           You got all the questions correct!
+          You got all the questions correct!
         </Dialog>
-
-
         <Card style={cardContainer}>
-          <Score score={this.state.score}/>
+          <Score score={this.state.score} total={this.state.allCards.length}/>
           <CardTitle title={this.state.currCard.question}/>
           { this.state.cardFlipped ?
             // add answer prop to pass down to answer side

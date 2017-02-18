@@ -5,7 +5,7 @@ class Score extends React.Component {
   render () {
     return (
       <div style={score}>
-        <h>Score: {this.props.score}</h>
+        <h>Score: {this.props.score} / {this.props.total}</h>
       </div>
     )
   }

@@ -10,9 +10,6 @@ class ShowAnswerButton extends React.Component {
     return (
       <div>
         <CardActions style={cardActions}>
-          {
-            // Update true/false here with props from parent as fn
-          }
           <RaisedButton
             label='Show Answer'
             onClick={this.props.flip.bind(this)}/>
