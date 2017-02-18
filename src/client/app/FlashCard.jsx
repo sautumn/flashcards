@@ -14,6 +14,8 @@ import AnswerSide from './AnswerSide.jsx';
 // Data
 import data from '../../../data.js';
 
+const possibleScore = data.length;
+
 class FlashCard extends React.Component {
   constructor(props) {
     super(props);
@@ -26,6 +28,7 @@ class FlashCard extends React.Component {
       reviewCards: [],
       open: false,
     };
+
     this.nextCard = this.nextCard.bind(this);
     this.cardFlipped = this.cardFlipped.bind(this);
     this.addPoint = this.addPoint.bind(this);
@@ -111,7 +114,7 @@ class FlashCard extends React.Component {
           You got all the questions correct!
         </Dialog>
         <Card style={cardContainer}>
-          <Score score={this.state.score} total={this.state.allCards.length}/>
+          <Score score={this.state.score} total={possibleScore}/>
           <CardTitle title={this.state.currCard.question}/>
           { this.state.cardFlipped ?
             // add answer prop to pass down to answer side
