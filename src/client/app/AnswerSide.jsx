@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 import { CardText, CardActions } from 'material-ui/Card';
 // Inline styles
-import { cardActions } from './styles/styles';
+import { cardActions, link } from './styles/styles';
 
 class AnswerSide extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class AnswerSide extends React.Component {
           {this.props.question}
         </CardText>
         <CardText>
-          <a href={this.props.sourceUrl} target='_blank'>{this.props.sourceTitle}</a>
+          <a href={this.props.sourceUrl} style={link} target='_blank'>{this.props.sourceTitle}</a>
         </CardText>
         <CardActions style={cardActions}>
           <RaisedButton

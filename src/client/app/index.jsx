@@ -18,7 +18,7 @@ import MenuItem from 'material-ui/MenuItem';
 
 class App extends React.Component {
   componentDidMount () {
-    document.body.style.backgroundColor = '#f1c40f';
+    document.body.style.backgroundColor = '#34495e';
   }
 
   render () {
