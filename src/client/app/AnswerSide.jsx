@@ -10,8 +10,8 @@ class AnswerSide extends React.Component {
   render() {
     return (
       <div>
-        <CardText style={centerText}>
-          {this.props.answer}
+        <CardText style={centerText} dangerouslySetInnerHTML={{__html: this.props.answer}}>
+          {/* {this.props.answer} */}
         </CardText>
         <CardText>
           <a href={this.props.sourceUrl} style={link} target='_blank'>{this.props.sourceTitle}</a>
