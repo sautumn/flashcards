@@ -4,23 +4,28 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 const styles = {};
 
 export const myTheme = darkBaseTheme;
-myTheme.fontFamily = '"Roboto Mono", monospace';
-myTheme.palette.canvasColor = '#000000';
-myTheme.palette.primary1Color = '#e67e22';
+myTheme.fontFamily = "'Raleway', sans-serif";
+// myTheme.palette.canvasColor = '#000000';
+myTheme.palette.primary1Color = '#BADA55';
+myTheme.palette.primary2Color = '#BADA55';
+myTheme.palette.accent3Color = '#000000',
+    // accent3Color: grey500,
 
 styles.myTheme = myTheme;
 
 const outsideText = {
   marginBottom: '3%',
-  color: '#ffffff',
-  fontFamily: '"Roboto Mono", monospace',
-  textTransform: 'uppercase',
+  fontFamily: "'Raleway', sans-serif",
   textAlign: 'center',
 };
 
 export const title = {
   ...outsideText,
-  fontSize: '28px',
+  textAlign: 'center',
+  fontSize: '40px',
+  color: '#ffffff',
+  color: '#a9bf65',
+  fontWeight: '900',
 };
 styles.title = title;
 
@@ -31,14 +36,11 @@ export const cardContainer = {
   position: 'absolute',
   left: '5%',
   right: '5%',
-  borderRight: 'solid 2px white',
-  // borderBottom: 'solid 2px white',
 };
 styles.cardContainer = cardContainer;
 
 export const score = {
   textAlign: 'right',
-  textTransform: 'uppercase',
   marginRight: '3%',
 }
 styles.score = score;
@@ -51,8 +53,14 @@ export const cardActions = {
 };
 styles.cardActions = cardActions;
 
+export const centerText = {
+  textAlign: 'center, !important',
+};
+styles.centerText = centerText;
+
 export const link = {
-  color: '#e67e22',
+  ...centerText,
+  color: '#bada55',
 };
 styles.link = link;
 

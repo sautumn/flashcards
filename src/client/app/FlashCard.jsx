@@ -28,7 +28,6 @@ class FlashCard extends React.Component {
       reviewCards: [],
       open: false,
     };
-
     this.nextCard = this.nextCard.bind(this);
     this.cardFlipped = this.cardFlipped.bind(this);
     this.addPoint = this.addPoint.bind(this);
@@ -119,7 +118,7 @@ class FlashCard extends React.Component {
           { this.state.cardFlipped ?
             // add answer prop to pass down to answer side
             <AnswerSide
-              question={this.state.currCard.answer}
+              answer={this.state.currCard.answer}
               sourceTitle={this.state.currCard.source_title}
               sourceUrl={this.state.currCard.source}
               correct={this.addPoint}

@@ -1,7 +1,7 @@
 import React    from 'react';
 import {render} from 'react-dom';
 // Material-UI Styles
-// import darkBaseTheme    from 'material-ui/styles/baseThemes/darkBaseTheme';
+import darkBaseTheme    from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme      from 'material-ui/styles/getMuiTheme';
 // Inline CSS Styles
@@ -18,7 +18,7 @@ import MenuItem from 'material-ui/MenuItem';
 
 class App extends React.Component {
   componentDidMount () {
-    document.body.style.backgroundColor = '#34495e';
+    document.body.style.backgroundColor = '#f3f3f3';
   }
 
   render () {

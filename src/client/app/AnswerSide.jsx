@@ -4,14 +4,14 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 import { CardText, CardActions } from 'material-ui/Card';
 // Inline styles
-import { cardActions, link } from './styles/styles';
+import { cardActions, link, centerText } from './styles/styles';
 
 class AnswerSide extends React.Component {
   render() {
     return (
       <div>
-        <CardText>
-          {this.props.question}
+        <CardText style={centerText}>
+          {this.props.answer}
         </CardText>
         <CardText>
           <a href={this.props.sourceUrl} style={link} target='_blank'>{this.props.sourceTitle}</a>
