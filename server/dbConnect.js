@@ -4,39 +4,54 @@ const data = require('../data.js');
 const pgp = require('pg-promise')();
 const cn = process.env.DATABASE_URL;
 const db = pgp(cn);
+const app = require('../app.js');
 
+console.log('app',app);
 
-let sco = null; // shared connection object;
 db.connect()
   .then(obj => {
       sco = obj; // save the connection object;
-      return sco.query('SELECT NOW() AS "theTime"');
   })
   .then(data => {
-      console.log('Database connected!');
+    console.log('Database connected!');
   }, error => {
-      console.log(error);
+    throw new Error(error);
   });
 
-  // performance-optimized, reusable set of columns:
+// bulk insert on start
+// performance-optimized, reusable set of columns:
 const cs = new pgp.helpers.ColumnSet(
   ['question', 'answer', 'sourceurl', 'sourcetitle', 'tag'],
   {table: 'questions'}
 );
-
-  // input values:
-// const values = data;
-
 // generating a multi-row insert query:
 const query = pgp.helpers.insert(data, cs);
-//=> INSERT INTO "tmp"("col_a","col_b") VALUES('a1','b1'),('a2','b2')
-console.log(data);
 // executing the query:
 db.none(query)
   .then(data=> {
-      // success;
-      console.log('inserted ', data);
+      // console.log('inserted ', data);
   })
   .catch(error=> {
-      // error;
+      throw new Error(error);
   });
+
+exports.getAllQuestions = (req, res) => {
+  db.query('SELECT * FROM questions')
+  .then( data => {
+    res.send(JSON.stringify(data));
+  })
+  .catch( err => {
+    console.log(err);
+  });
+};
+
+exports.getTagQuestions = (req, res) => {
+  // console.log(req.params.tag)
+  db.query(`SELECT * FROM questions WHERE tag='${req.params.tag}'`)
+    .then( data => {
+      res.send(JSON.stringify(data));
+    })
+    .catch( err => {
+      console.log(err);
+    });
+};

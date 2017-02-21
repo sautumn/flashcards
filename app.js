@@ -3,9 +3,8 @@ const morgan = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
 const APP_DIR = path.resolve(__dirname, 'src/client');
-
 // Establish connection to database
-require('./server/dbConnect');
+const db = require('./server/dbConnect');
 
 const app = express();
 
@@ -18,10 +17,23 @@ app.use(bodyParser.urlencoded({    // to support URL-encoded bodies
 //host static files
 app.use(express.static(APP_DIR));
 
+// Main index.html page
 app.get('/', (req, res) => {
   res.sendFile(path.join(APP_DIR + '/index.html'));
+});
+
+// Route to retrieve all cards from the db
+app.get('/cards', (req, res) => {
+  db.getAllQuestions(req, res);
+});
+
+// Route to retrieve specific tag cards from the db
+app.get('/cards/:tag', (req, res) => {
+  db.getTagQuestions(req, res);
 });
 
 app.listen(8081, () => {
    console.log('Local server listening at 8081! 😎');
 });
+
+module.exports = app;
