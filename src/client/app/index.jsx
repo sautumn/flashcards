@@ -17,7 +17,7 @@ import Categories        from './Categories.jsx';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-class App extends React.Component {
+class Main extends React.Component {
   componentDidMount () {
     // document.body.style.backgroundColor = '#f3f3f3';
   }
@@ -26,14 +26,15 @@ class App extends React.Component {
     return (
       <MuiThemeProvider>
         <div>
+
             <Categories/>
-            {/* <div style={title}>Front End Flashcards</div>
-            <FlashCard/> */}
-            <FlashCard />
+            <div style={title}>Front End Flashcards</div>
+            <FlashCard/>
         </div>
       </MuiThemeProvider>
     );
   }
 }
+render(<Main/>, document.getElementById('app'));
 
-render(<App/>, document.getElementById('app'));
+export default Main;

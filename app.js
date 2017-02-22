@@ -18,17 +18,17 @@ app.use(bodyParser.urlencoded({    // to support URL-encoded bodies
 app.use(express.static(APP_DIR));
 
 // Main index.html page
-app.get('/', (req, res) => {
-  res.sendFile(path.join(APP_DIR + '/index.html'));
-});
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(APP_DIR + '/index.html'));
+// });
 
 // Route to retrieve all cards from the db
-app.get('/cards', (req, res) => {
+app.get('/api/cards', (req, res) => {
   db.getAllQuestions(req, res);
 });
 
 // Route to retrieve specific tag cards from the db
-app.get('/cards/:tag', (req, res) => {
+app.get('/api/cards/:tag', (req, res) => {
   db.getTagQuestions(req, res);
 });
 
