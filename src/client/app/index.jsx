@@ -11,6 +11,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 // Components
 import FlashCard        from './FlashCard.jsx';
+import Categories        from './Categories.jsx';
 // import About            from './About.jsx';
 
 import SelectField from 'material-ui/SelectField';
@@ -18,15 +19,17 @@ import MenuItem from 'material-ui/MenuItem';
 
 class App extends React.Component {
   componentDidMount () {
-    document.body.style.backgroundColor = '#f3f3f3';
+    // document.body.style.backgroundColor = '#f3f3f3';
   }
 
   render () {
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(myTheme)}>
+      <MuiThemeProvider>
         <div>
-            <div style={title}>Front End Flashcards</div>
-            <FlashCard/>
+            <Categories/>
+            {/* <div style={title}>Front End Flashcards</div>
+            <FlashCard/> */}
+            <FlashCard />
         </div>
       </MuiThemeProvider>
     );

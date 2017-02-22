@@ -6,12 +6,7 @@ const cn = process.env.DATABASE_URL;
 const db = pgp(cn);
 const app = require('../app.js');
 
-console.log('app',app);
-
 db.connect()
-  .then(obj => {
-      sco = obj; // save the connection object;
-  })
   .then(data => {
     console.log('Database connected!');
   }, error => {
@@ -27,13 +22,15 @@ const cs = new pgp.helpers.ColumnSet(
 // generating a multi-row insert query:
 const query = pgp.helpers.insert(data, cs);
 // executing the query:
-db.none(query)
-  .then(data=> {
-      // console.log('inserted ', data);
-  })
-  .catch(error=> {
-      throw new Error(error);
-  });
+exports.bulkInsert = () => {
+  db.none(query)
+    .then(data=> {
+        // console.log('inserted ', data);
+    })
+    .catch(error=> {
+        throw new Error(error);
+    });
+}
 
 exports.getAllQuestions = (req, res) => {
   db.query('SELECT * FROM questions')
@@ -46,7 +43,6 @@ exports.getAllQuestions = (req, res) => {
 };
 
 exports.getTagQuestions = (req, res) => {
-  // console.log(req.params.tag)
   db.query(`SELECT * FROM questions WHERE tag='${req.params.tag}'`)
     .then( data => {
       res.send(JSON.stringify(data));

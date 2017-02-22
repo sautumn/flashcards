@@ -14,7 +14,8 @@ class AnswerSide extends React.Component {
           {/* {this.props.answer} */}
         </CardText>
         <CardText>
-          <a href={this.props.sourceUrl} style={link} target='_blank'>{this.props.sourceTitle}</a>
+          {console.log(this.props)}
+          <a href={this.props.sourceUrl} target='_blank'>{this.props.sourceTitle}</a>
         </CardText>
         <CardActions style={cardActions}>
           <RaisedButton

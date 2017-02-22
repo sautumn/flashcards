@@ -119,8 +119,8 @@ class FlashCard extends React.Component {
             // add answer prop to pass down to answer side
             <AnswerSide
               answer={this.state.currCard.answer}
-              sourceTitle={this.state.currCard.source_title}
-              sourceUrl={this.state.currCard.source}
+              sourceTitle={this.state.currCard.sourcetitle}
+              sourceUrl={this.state.currCard.sourceurl}
               correct={this.addPoint}
               incorrect={this.reviewLater}
             />

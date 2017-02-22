@@ -6,9 +6,9 @@ const styles = {};
 export const myTheme = darkBaseTheme;
 myTheme.fontFamily = "'Raleway', sans-serif";
 // myTheme.palette.canvasColor = '#000000';
-myTheme.palette.primary1Color = '#BADA55';
-myTheme.palette.primary2Color = '#BADA55';
-myTheme.palette.accent3Color = '#000000',
+// myTheme.palette.primary1Color = '#FFFFFF';
+// myTheme.palette.primary2Color = '#BADA55';
+// myTheme.palette.accent3Color = '#000000',
     // accent3Color: grey500,
 
 styles.myTheme = myTheme;
@@ -23,8 +23,8 @@ export const title = {
   ...outsideText,
   textAlign: 'center',
   fontSize: '40px',
-  color: '#ffffff',
-  color: '#a9bf65',
+  // color: '#ffffff',
+  // color: '#a9bf65',
   fontWeight: '900',
 };
 styles.title = title;
