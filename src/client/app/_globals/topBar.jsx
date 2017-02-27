@@ -4,8 +4,9 @@ export default React.createClass({
 
   render() {
     return (
-      <div></div>
+      <div>this better work! :)</div>
     );
   }
 
 });
+render(<Main/>, document.getElementById('app'));

@@ -26,9 +26,8 @@ class Main extends React.Component {
     return (
       <MuiThemeProvider>
         <div>
-
             <Categories/>
-            <div style={title}>Front End Flashcards</div>
+            <br/>
             <FlashCard/>
         </div>
       </MuiThemeProvider>
