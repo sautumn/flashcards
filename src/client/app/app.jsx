@@ -13,10 +13,6 @@ class App extends React.Component {
   render () {
     return (
       <Router history={browserHistory}>
-        {/* <Route path='/' component={test}>
-        <IndexRoute component={test} />
-      </Route> */}
-      {/* <Route path='*' component={NotFound} /> */}
       <Route path='/' component={Main} />
       <Route path='/index' component={Main} />
       </Router>,

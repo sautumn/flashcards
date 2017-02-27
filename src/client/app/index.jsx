@@ -28,7 +28,7 @@ class Main extends React.Component {
         <div>
             <Categories/>
             <br/>
-            <FlashCard/>
+            <FlashCard />
         </div>
       </MuiThemeProvider>
     );

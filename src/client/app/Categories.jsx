@@ -2,7 +2,11 @@ import React from 'react';
 // Material-UI Styles
 import AppBar from 'material-ui/AppBar';
 import MenuItem from 'material-ui/MenuItem';
+import Menu from 'material-ui/Menu';
 import Drawer from 'material-ui/Drawer';
+import Subheader from 'material-ui/Subheader';
+
+
 
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
@@ -19,7 +23,6 @@ class Categories extends React.Component {
 
   toggleLeftNav() {
     let value = this.state.open;
-    console.log(this.state.open)
     this.setState({
       open: !value
     })
@@ -36,10 +39,16 @@ class Categories extends React.Component {
           docked={false}
           width={200}
           open={this.state.open}
-          // onRequestChange={this.toggleLeftNav}
+          onRequestChange={this.toggleLeftNav}
         >
-          <MenuItem onTouchTap={this.handleClose}>Menu Item</MenuItem>
-          <MenuItem onTouchTap={this.handleClose}>Menu Item 2</MenuItem>
+          <Subheader>By Category</Subheader>
+          <MenuItem onTouchTap={this.handleClose}>General Front End</MenuItem>
+          <MenuItem onTouchTap={this.handleClose}>HTML</MenuItem>
+          <MenuItem onTouchTap={this.handleClose}>CSS</MenuItem>
+          <MenuItem onTouchTap={this.handleClose}>General Frameworks</MenuItem>
+          <MenuItem onTouchTap={this.handleClose}>React</MenuItem>
+          <MenuItem onTouchTap={this.handleClose}>Angular</MenuItem>
+          <MenuItem onTouchTap={this.handleClose}>Time Complexity</MenuItem>
         </Drawer>
 
       </div>
