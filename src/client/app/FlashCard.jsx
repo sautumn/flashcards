@@ -22,6 +22,7 @@ class FlashCard extends React.Component {
     console.log(props)
     this.state = {
       allCards: props.data,
+      numCards: props.data.length,
       cardNumber: 0,
       currCard: props.data[0],
       score: 0,
@@ -44,6 +45,7 @@ class FlashCard extends React.Component {
   initialState() {
     this.setState({
       allCards: this.props.data,
+      numCards: this.props.data.length,
       cardNumber: 0,
       currCard: this.props.data[0],
       score: 0,
@@ -99,7 +101,6 @@ class FlashCard extends React.Component {
   };
 
   render () {
-    console.log(this.props);
     const actions = [
       <FlatButton
         label="Restart Cards"
@@ -120,7 +121,7 @@ class FlashCard extends React.Component {
           You got all the questions correct!
         </Dialog>
         <Card style={cardContainer}>
-          <Score score={this.state.score} total={possibleScore}/>
+          <Score score={this.state.score} total={this.state.numCards}/>
           <CardTitle title={this.state.currCard.question}/>
           { this.state.cardFlipped ?
             // add answer prop to pass down to answer side
