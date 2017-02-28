@@ -19,10 +19,11 @@ const possibleScore = data.length;
 class FlashCard extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props)
     this.state = {
-      allCards: data,
+      allCards: props.data,
       cardNumber: 0,
-      currCard: data[0],
+      currCard: props.data[0],
       score: 0,
       cardFlipped: false,
       reviewCards: [],
@@ -35,17 +36,22 @@ class FlashCard extends React.Component {
     this.handleClose = this.handleClose.bind(this);
   };
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.data!== this.state.allCards) {
+      this.initialState();
+    }
+  };
   initialState() {
     this.setState({
-      allCards: data,
+      allCards: this.props.data,
       cardNumber: 0,
-      currCard: data[0],
+      currCard: this.props.data[0],
       score: 0,
       cardFlipped: false,
       reviewCards: [],
       open: false,
     });
-  }
+  };
 
   nextCard() {
     let nextCardNumber = this.state.cardNumber + 1;
@@ -93,6 +99,7 @@ class FlashCard extends React.Component {
   };
 
   render () {
+    console.log(this.props);
     const actions = [
       <FlatButton
         label="Restart Cards"

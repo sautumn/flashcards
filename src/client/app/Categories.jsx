@@ -5,9 +5,6 @@ import MenuItem from 'material-ui/MenuItem';
 import Menu from 'material-ui/Menu';
 import Drawer from 'material-ui/Drawer';
 import Subheader from 'material-ui/Subheader';
-
-
-
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import FlatButton from 'material-ui/FlatButton';
@@ -19,14 +16,19 @@ class Categories extends React.Component {
       open: false,
     };
     this.toggleLeftNav = this.toggleLeftNav.bind(this);
+    this.sendUpCategory = this.sendUpCategory.bind(this);
   };
 
   toggleLeftNav() {
     let value = this.state.open;
     this.setState({
-      open: !value
+      open: !value,
     })
   };
+
+  sendUpCategory(category) {
+    console.log('hey you click ', category);
+  }
 
   render() {
     return (
@@ -42,13 +44,13 @@ class Categories extends React.Component {
           onRequestChange={this.toggleLeftNav}
         >
           <Subheader>By Category</Subheader>
-          <MenuItem onTouchTap={this.handleClose}>General Front End</MenuItem>
-          <MenuItem onTouchTap={this.handleClose}>HTML</MenuItem>
-          <MenuItem onTouchTap={this.handleClose}>CSS</MenuItem>
-          <MenuItem onTouchTap={this.handleClose}>General Frameworks</MenuItem>
-          <MenuItem onTouchTap={this.handleClose}>React</MenuItem>
-          <MenuItem onTouchTap={this.handleClose}>Angular</MenuItem>
-          <MenuItem onTouchTap={this.handleClose}>Time Complexity</MenuItem>
+          <MenuItem onClick={(e) => (this.props.category('General'))}>General Front End</MenuItem>
+          <MenuItem onClick={(e) => (this.props.category('HTML'))}>HTML</MenuItem>
+          <MenuItem onClick={(e) => (this.props.category('CSS'))}>CSS</MenuItem>
+          <MenuItem onClick={(e) => (this.props.category('Frameworks'))}>General Frameworks</MenuItem>
+          <MenuItem onClick={(e) => (this.props.category('React'))}>React</MenuItem>
+          <MenuItem onClick={(e) => (this.props.category('Angular'))}>Angular</MenuItem>
+          <MenuItem onClick={(e) => (this.props.category('Time'))}>Time Complexity</MenuItem>
         </Drawer>
 
       </div>

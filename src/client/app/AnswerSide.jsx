@@ -11,10 +11,8 @@ class AnswerSide extends React.Component {
     return (
       <div>
         <CardText style={centerText} dangerouslySetInnerHTML={{__html: this.props.answer}}>
-          {/* {this.props.answer} */}
         </CardText>
         <CardText>
-          {console.log(this.props)}
           <a href={this.props.sourceUrl} target='_blank'>{this.props.sourceTitle}</a>
         </CardText>
         <CardActions style={cardActions}>
