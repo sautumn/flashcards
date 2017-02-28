@@ -39,7 +39,7 @@ class Categories extends React.Component {
           onRequestChange={this.toggleLeftNav}
         >
           <Subheader>By Category</Subheader>
-          <MenuItem onClick={(e) => (this.props.category('General'))}>General Front End</MenuItem>
+          <MenuItem onClick={(e) => {console.log('clicked in categories');this.props.category('General')}}>General Front End</MenuItem>
           <MenuItem onClick={(e) => (this.props.category('HTML'))}>HTML</MenuItem>
           <MenuItem onClick={(e) => (this.props.category('CSS'))}>CSS</MenuItem>
           <Subheader>Frameworks</Subheader>

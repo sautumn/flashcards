@@ -19,7 +19,6 @@ const possibleScore = data.length;
 class FlashCard extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props)
     this.state = {
       allCards: props.data,
       numCards: props.data.length,
@@ -38,11 +37,15 @@ class FlashCard extends React.Component {
   };
 
   componentWillReceiveProps(nextProps) {
+    console.log('next props', nextProps)
     if (nextProps.data!== this.state.allCards) {
+      this.props = nextProps;
       this.initialState();
     }
   };
   initialState() {
+    console.log('init state called in flashcard')
+    console.log(this.props.data)
     this.setState({
       allCards: this.props.data,
       numCards: this.props.data.length,

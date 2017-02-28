@@ -30,6 +30,7 @@ class Main extends React.Component {
   //sort the data based on whats clicked and passed back up
   //then pass it back down to the flashcard so it can go through the lists
   sortByCategory(category) {
+    console.log('index category recieved', category);
     let sortedData = data.filter((item) => {
       return item.tag === category;
     });
