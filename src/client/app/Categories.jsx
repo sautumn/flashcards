@@ -16,7 +16,6 @@ class Categories extends React.Component {
       open: false,
     };
     this.toggleLeftNav = this.toggleLeftNav.bind(this);
-    this.sendUpCategory = this.sendUpCategory.bind(this);
   };
 
   toggleLeftNav() {
@@ -25,10 +24,6 @@ class Categories extends React.Component {
       open: !value,
     })
   };
-
-  sendUpCategory(category) {
-    console.log('hey you click ', category);
-  }
 
   render() {
     return (
@@ -47,9 +42,11 @@ class Categories extends React.Component {
           <MenuItem onClick={(e) => (this.props.category('General'))}>General Front End</MenuItem>
           <MenuItem onClick={(e) => (this.props.category('HTML'))}>HTML</MenuItem>
           <MenuItem onClick={(e) => (this.props.category('CSS'))}>CSS</MenuItem>
-          <MenuItem onClick={(e) => (this.props.category('Frameworks'))}>General Frameworks</MenuItem>
+          <Subheader>Frameworks</Subheader>
+          <MenuItem onClick={(e) => (this.props.category('General Frameworks'))}>General Frameworks</MenuItem>
           <MenuItem onClick={(e) => (this.props.category('React'))}>React</MenuItem>
           <MenuItem onClick={(e) => (this.props.category('Angular'))}>Angular</MenuItem>
+          <Subheader>Algorithms</Subheader>
           <MenuItem onClick={(e) => (this.props.category('Time'))}>Time Complexity</MenuItem>
         </Drawer>
 
