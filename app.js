@@ -6,6 +6,9 @@ const APP_DIR = path.resolve(__dirname, 'src/client');
 // Establish connection to database
 const db = require('./server/dbConnect');
 
+// add all files into db
+// db.bulkInsert();
+
 const app = express();
 
 app.use(morgan('dev1'));
@@ -28,6 +31,7 @@ app.get('/api/cards', (req, res) => {
 });
 
 // Route to retrieve specific tag cards from the db
+// case sensitive 😤
 app.get('/api/cards/:tag', (req, res) => {
   db.getTagQuestions(req, res);
 });

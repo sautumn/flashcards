@@ -14,9 +14,14 @@ injectTapEventPlugin();
 // Components
 import FlashCard  from './FlashCard.jsx';
 import Categories from './Categories.jsx';
-// import About            from './About.jsx';
+import About  from './About.jsx';
+
+
+
 // Data
 import data from '../../../data.js';
+
+//http call here to get data from endpoint
 
 class Main extends React.Component {
   constructor(props) {
@@ -44,9 +49,9 @@ class Main extends React.Component {
     return (
       <MuiThemeProvider>
         <div>
-            <Categories category={this.sortByCategory}/>
-            <br/>
-            <FlashCard data={this.state.questionsArray}/>
+          <Categories category={this.sortByCategory}/>
+          <br/>
+          <FlashCard data={this.state.questionsArray}/>
         </div>
       </MuiThemeProvider>
     );

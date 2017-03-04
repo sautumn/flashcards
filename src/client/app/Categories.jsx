@@ -42,6 +42,7 @@ class Categories extends React.Component {
           <MenuItem onClick={(e) => {console.log('clicked in categories');this.props.category('General')}}>General Front End</MenuItem>
           <MenuItem onClick={(e) => (this.props.category('HTML'))}>HTML</MenuItem>
           <MenuItem onClick={(e) => (this.props.category('CSS'))}>CSS</MenuItem>
+          <MenuItem onClick={(e) => (this.props.category('JavaScript'))}>JavaScript</MenuItem>
           <Subheader>Frameworks</Subheader>
           <MenuItem onClick={(e) => (this.props.category('General Frameworks'))}>General Frameworks</MenuItem>
           <MenuItem onClick={(e) => (this.props.category('React'))}>React</MenuItem>

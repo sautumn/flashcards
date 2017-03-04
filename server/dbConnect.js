@@ -16,16 +16,17 @@ db.connect()
 // bulk insert on start
 // performance-optimized, reusable set of columns:
 const cs = new pgp.helpers.ColumnSet(
-  ['question', 'answer', 'sourceurl', 'sourcetitle', 'tag'],
+  ['num', 'question', 'answer', 'sourceurl', 'sourcetitle', 'tag'],
   {table: 'questions'}
 );
 // generating a multi-row insert query:
 const query = pgp.helpers.insert(data, cs);
+// console.log(query)
 // executing the query:
 exports.bulkInsert = () => {
   db.none(query)
     .then(data=> {
-        // console.log('inserted ', data);
+      console.log('inserted ', data);
     })
     .catch(error=> {
         throw new Error(error);

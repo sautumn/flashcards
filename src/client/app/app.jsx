@@ -1,13 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { Router, browserHistory, Route, IndexRoute } from 'react-router';
-
 // Components
 import Main from './index.jsx';
 import FlashCard from './FlashCard.jsx';
-
-// -- Import components
-// import App from '';
 
 class App extends React.Component {
   render () {

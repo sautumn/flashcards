@@ -1,5 +1,5 @@
 CREATE TABLE questions (
-  ID SERIAL PRIMARY KEY,
+  num INT PRIMARY KEY NOT NULL,
   question TEXT,
   answer TEXT,
   sourceurl TEXT,
