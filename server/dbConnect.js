@@ -9,6 +9,7 @@ const app = require('../app.js');
 db.connect()
   .then(data => {
     console.log('Database connected!');
+    data.done();
   }, error => {
     throw new Error(error);
   });
