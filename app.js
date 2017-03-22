@@ -36,7 +36,7 @@ app.get('/api/cards/:tag', (req, res) => {
   db.getTagQuestions(req, res);
 });
 
-app.listen(8081, () => {
+app.listen(process.env.PORT || 8081, () => {
    console.log('Local server listening at 8081! 😎');
 });
 
