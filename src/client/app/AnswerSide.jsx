@@ -17,9 +17,11 @@ class AnswerSide extends React.Component {
         </CardText>
         <CardActions style={cardActions}>
           <RaisedButton
+            secondary
             label='Review later'
             onClick={this.props.incorrect.bind(this)}/>
           <RaisedButton
+            primary
             label='Got it!'
             onClick={this.props.correct.bind(this)}/>
         </CardActions>

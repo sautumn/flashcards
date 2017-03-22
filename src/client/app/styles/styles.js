@@ -42,6 +42,7 @@ styles.cardContainer = cardContainer;
 export const score = {
   textAlign: 'right',
   marginRight: '3%',
+  marginTop: '1.5%',
 }
 styles.score = score;
 
